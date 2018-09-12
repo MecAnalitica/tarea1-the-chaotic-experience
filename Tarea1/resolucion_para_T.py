@@ -6,16 +6,16 @@ sys.setrecursionlimit(10000)
 def f(t):
     return t
  
-def g(t, V, k, theta):
+def g(t, v, k, theta):
     G = 9.81
-    v = V * math.sin(theta)
-    return ((k * v + G)/(G * k)) * (1. - math.exp(-k * t))
+    v = V * math.sin(math.radians(theta))
+    return (k * v + G)/(G * k) * (1. - math.exp(-k * t))
  
 def biseccion(a, b):
     #Se calcula el punto medio entre el intervalo (A, B).
     c = (b + a)/2.
     
-    #Se verifica si el punto medio de (A, B) coincide con la intersección de ambas funciones.
+    #Se verifica si el punto medio de (A, B) coincide con la intersección de ambas funciones.    
     if f(c) == g(c, V, k, theta):
         print(c) 
  
@@ -33,19 +33,35 @@ def biseccion(a, b):
         b = c
         biseccion(a, b)
         
+def perturbativa(k, V, theta):
+    g = 9.81
+    v = V * math.sin(math.radians(theta))
+    X = ((2 * v)/g)*(1 - ((k * v)/(3 * g)))
+    print(X)
+    
+def T_sin_friccion(V, theta):
+    g = 9.81
+    v = V * math.sin(math.radians(theta))
+    T = (2 * v)/g
+    print(T)
+    
 #Definicion de los parametros e intervalo (A,B).     
 A = 1.
-B = 1000
+B = 500
 V = 500
-k = 0.00001
+k = 10e-10
 theta = 65
 
 print("SOLUCION TIEMPO T TIRO PARABOLICO CON RESISTENCIA AL AIRE")
 
-
-if (f(A) - g(A, V, k, theta))*(f(B) - g(B, V, k, theta)) < 0.:
-    print("El resultado es: ")
-    biseccion(A, B)
-  
+if k = 0:
+    T_sin_friccion(V, theta)
+    
 else:
-    print("Seleccione un intervalo más grande.")
+    if (f(A) - g(A, V, k, theta))*(f(B) - g(B, V, k, theta)) < 0.:
+        print("El resultado es: ")
+        biseccion(A, B)
+        perturbativa(k, V, theta)
+    
+    else:
+        print("Seleccione un intervalo más grande.")
