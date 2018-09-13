@@ -2,7 +2,7 @@ import math
 import sys
 sys.setrecursionlimit(10000)
 
-#Se definen dos funciones una para cada lado de la ecuación trascendental.
+#Se definen dos funciones una para cada lado de la ecuacion trascendental.
 def f(t):
     return t
  
@@ -15,11 +15,11 @@ def biseccion(a, b):
     #Se calcula el punto medio entre el intervalo (A, B).
     c = (b + a)/2.
     
-    #Se verifica si el punto medio de (A, B) coincide con la intersección de ambas funciones.    
+    #Se verifica si el punto medio de (A, B) coincide con la interseccion de ambas funciones.    
     if f(c) == g(c, V, k, theta):
         print(c) 
  
-    #De no coincidir el punto medio con la intersección de f y g se redefinen los extremos del
+    #De no coincidir el punto medio con la interseccion de f y g se redefinen los extremos del
     #intervalo, si el producto de las diferencias entre f y g en los puntos a y c es mayor que
     #cero, significa entonces que el la interseccion esta fuera de el intervalo (a, c), en caso 
     #contrario esta dentro del intervalo (a, c).
@@ -47,14 +47,14 @@ def T_sin_friccion(V, theta):
     
 #Definicion de los parametros e intervalo (A,B).     
 A = 1.
-B = 500
-V = 500
-k = 10e-10
-theta = 65
+B = 500.
+V = 500.
+k = 0.95
+theta = 65.
 
 print("SOLUCION TIEMPO T TIRO PARABOLICO CON RESISTENCIA AL AIRE")
 
-if k = 0:
+if k == 0:
     T_sin_friccion(V, theta)
     
 else:
@@ -64,4 +64,4 @@ else:
         perturbativa(k, V, theta)
     
     else:
-        print("Seleccione un intervalo más grande.")
+        print("Seleccione un intervalo mas grande.")
