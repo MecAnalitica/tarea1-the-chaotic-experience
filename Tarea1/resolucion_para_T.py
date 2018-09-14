@@ -61,6 +61,7 @@ else:
     if (f(A) - g(A, V, k, theta))*(f(B) - g(B, V, k, theta)) < 0.:
         print("El resultado es: ")
         biseccion(A, B)
+        print("Mediante el metodo perturbativo resulta: ")
         perturbativa(k, V, theta)
     
     else:
